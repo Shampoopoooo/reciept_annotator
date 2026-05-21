@@ -1,0 +1,10 @@
+{
+  "name": "Receipt Tax Recalculator",
+  "description": "Upload a receipt photo to extract the total, recalculate it with a custom tax rate, and get an annotated image back.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
