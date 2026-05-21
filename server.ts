@@ -140,11 +140,18 @@ async function startServer() {
       // Red on yellow text
       const fontSize = Math.max(18, Math.floor(width / 24));
       const padding = 10;
+      const line1 = `If tax were ${taxRateInput}%,`;
+      const line2 = `the total amount would be $${newTotalAmount.toFixed(2)}.`;
+      const boxHeight = fontSize * 3.2;
+      
       const svgOverlay = `
         <svg width="${width}" height="${height}">
-          <rect x="0" y="${height - fontSize * 2.2}" width="${width}" height="${fontSize * 2.2}" fill="yellow" opacity="0.9" />
-          <text x="${width / 2}" y="${height - fontSize * 0.8}" font-family="sans-serif" font-size="${fontSize}" fill="red" font-weight="bold" text-anchor="middle">
-            ${annotationText}
+          <rect x="0" y="${height - boxHeight}" width="${width}" height="${boxHeight}" fill="yellow" opacity="0.9" />
+          <text x="${width / 2}" y="${height - fontSize * 1.8}" font-family="sans-serif" font-size="${fontSize}" fill="red" font-weight="bold" text-anchor="middle">
+            ${line1}
+          </text>
+          <text x="${width / 2}" y="${height - fontSize * 0.4}" font-family="sans-serif" font-size="${fontSize}" fill="red" font-weight="bold" text-anchor="middle">
+            ${line2}
           </text>
         </svg>
       `;
